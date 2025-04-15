@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Health Care Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(120deg, #f4f4f9, #e0f7fa);
+        color: #333;
+      }
+
+      nav.navbar {
+        background: linear-gradient(90deg, #4c9fd9, #4caf50);
+      }
+
+      .navbar-brand, .navbar-nav .nav-link {
+        font-weight: 600;
+        color: #fff !important;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ffe082 !important;
+      }
+
+      .blog-section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        color: #2e7d32;
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(90deg, #4c9fd9, #4caf50);
+        bottom: -10px;
+        left: 25%;
+      }
+
+      .blog-post {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-left: 4px solid #4caf50;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .blog-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blog-meta {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .blog-meta i {
+        margin-right: 5px;
+        color: #4caf50;
+      }
+
+      .blog-title {
+        color: #2e7d32;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+      }
+
+      .blog-excerpt {
+        color: #666;
+        margin-bottom: 0;
+        flex-grow: 1;
+        line-height: 1.6;
+      }
+
+      .category-buttons {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .category-btn {
+        margin: 5px;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 25px;
+        background: #fff;
+        color: #666;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .category-btn:hover, .category-btn.active {
+        background: linear-gradient(90deg, #4c9fd9, #4caf50);
+        color: #fff;
+      }
+
+      .search-box {
+        max-width: 500px;
+        margin: 0 auto 30px;
+      }
+
+      .search-box .form-control {
+        border-radius: 25px;
+        padding: 12px 20px;
+        border: 2px solid #e0e0e0;
+      }
+
+      .search-box .form-control:focus {
+        border-color: #4caf50;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Health Center</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/developer">Developer</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Blog</h2>
+        </div>
+
+        <div class="search-box">
+          <input type="text" class="form-control" id="searchInput" placeholder="Search articles...">
+        </div>
+
+        <div class="category-buttons">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="technology">Technology</button>
+          <button class="category-btn" data-category="health">Health</button>
+          <button class="category-btn" data-category="research">Research</button>
+        </div>
+
+        <div class="row" id="blogPosts">
+          <div class="col-md-4 mb-4" data-category="technology">
+            <a href="/blog/ai-future" class="blog-post">
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                  <span><i class="far fa-folder"></i> Technology</span>
+                </div>
+                <h3 class="blog-title">The Future of AI in Healthcare</h3>
+                <p class="blog-excerpt">Exploring how artificial intelligence is revolutionizing patient care and medical research. Discover the latest advancements and their impact on healthcare delivery.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-4" data-category="health">
+            <a href="/blog/mental-health" class="blog-post">
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="far fa-calendar"></i> March 10, 2024</span>
+                  <span><i class="far fa-folder"></i> Health</span>
+                </div>
+                <h3 class="blog-title">Understanding Mental Health</h3>
+                <p class="blog-excerpt">A comprehensive guide to mental health awareness and self-care practices. Learn about maintaining mental well-being in today's fast-paced world.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 mb-4" data-category="research">
+            <a href="/blog/medical-research" class="blog-post">
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="far fa-calendar"></i> March 5, 2024</span>
+                  <span><i class="far fa-folder"></i> Research</span>
+                </div>
+                <h3 class="blog-title">Breakthroughs in Medical Research</h3>
+                <p class="blog-excerpt">Latest developments in medical research and their potential impact on healthcare. Explore groundbreaking discoveries and their implications for patient care.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const blogPosts = document.querySelectorAll('.col-md-4');
+        const searchInput = document.getElementById('searchInput');
+
+        // Category filtering
+        categoryButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter posts
+            blogPosts.forEach(post => {
+              if (category === 'all' || post.dataset.category === category) {
+                post.style.display = 'block';
+              } else {
+                post.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+          
+          blogPosts.forEach(post => {
+            const title = post.querySelector('.blog-title').textContent.toLowerCase();
+            const excerpt = post.querySelector('.blog-excerpt').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+              post.style.display = 'block';
+            } else {
+              post.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
